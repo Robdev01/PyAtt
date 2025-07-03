@@ -58,7 +58,7 @@ PyAtt/
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/pyatt.git
+git clone https://github.com/Robdev01/PyAtt
 cd pyatt
 ```
 
