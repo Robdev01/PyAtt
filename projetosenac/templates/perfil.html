@@ -1,0 +1,31 @@
+{% extends "homepage.html" %}
+
+{% block titulo %}
+<title>Perfil {{ usuario.username }}</title>
+{% endblock %}
+
+{% block body %}
+<body>
+    <h1>Esse é o perfil do: {{ usuario.username }}</h1>
+
+    <a href="{{ url_for('cadastrar_tarefa') }}">
+        <button>Cadastrar Tarefa</button>
+    </a>
+
+    <a href="{{ url_for('logout') }}">
+        <button>Sair</button>
+    </a>
+
+    <h2>Minhas Tarefas</h2>
+    <ul>
+        {% for tarefa in tarefas %}
+            <li>
+                <strong>{{ tarefa.titulo }}</strong> - Categoria: {{ tarefa.categoria }}
+                ({{ tarefa.data_criacao.strftime('%d/%m/%Y') }})
+            </li>
+        {% else %}
+            <li>Você ainda não cadastrou tarefas.</li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block titulo %}
+    <title>senac</title>
+    {% endblock %}
+</head>
+{% block body %}
+<body>
+<h1>Meu site em html e flask</h1>
+<h2>alteração</h2>
+<a href="{{url_for('perfil', id_usuario=usuario.id)}}">Perfil</a>
+<a href="{{ url_for('criarconta') }}">Criar conta</a>
+
+
+{% block formulario %}
+<form method="POST">
+{{ form.csrf_token }}
+
+
+
+    {{ form.email.label }}
+    {{ form.email() }}
+
+    {{ form.senha.label }}
+    {{ form.senha() }}
+
+    {{ form.botao_confirmacao() }}
+
+
+</form>
+{% endblock %}
+</body>
+{% endblock %}
+</html>
